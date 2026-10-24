@@ -1,11 +1,12 @@
 <script lang="ts">
     import { onMount, onDestroy } from 'svelte';
     import QrScanner from 'qr-scanner';
-    import { Camera } from '@lucide/svelte';
+    import { Camera, X } from '@lucide/svelte';
     import { notify } from '#lib/utils/sound';
 
-    let { onScan, mode = 'camera', imageFile = null, flash = false, camera = 'environment', points = null } = $props<{
+    let { onScan, onReset, mode = 'camera', imageFile = null, flash = false, camera = 'environment', points = null } = $props<{
         onScan: (data: string, points?: any) => void;
+        onReset: () => void;
         mode: 'camera' | 'image';
         imageFile: File | null;
         flash: boolean;
@@ -170,6 +171,13 @@
         </div>
     {:else if imageFile}
         <div class="w-full h-full flex items-center justify-center p-4 relative">
+             <button 
+                onclick={onReset}
+                class="absolute top-4 right-4 z-30 p-2 bg-charcoal/80 text-white rounded-full hover:bg-pumpkin transition-colors backdrop-blur-sm"
+                aria-label="Close image"
+             >
+                <X size={24} />
+             </button>
              <img 
                 bind:this={imgElement}
                 src={URL.createObjectURL(imageFile)} 

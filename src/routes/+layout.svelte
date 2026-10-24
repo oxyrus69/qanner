@@ -7,6 +7,7 @@
 </script>
 
 <svelte:head>
+	<title>Qanner - QR Code Scanner</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

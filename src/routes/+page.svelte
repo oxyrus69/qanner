@@ -166,6 +166,7 @@
             camera={preferredCamera}
             points={lastPoints}
             onScan={(data, points) => handleScan(data, mode, points)} 
+            onReset={toggleMode}
         />
         
         <!-- Header hanya terlihat di mobile -->
