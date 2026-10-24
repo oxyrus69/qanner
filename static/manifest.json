@@ -1,0 +1,16 @@
+{
+  "name": "Qanner",
+  "short_name": "Qanner",
+  "description": "High-performance web QR code scanner",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#233d4d",
+  "theme_color": "#fe7f2d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
